@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ME PERDONAS ISAURA ?</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f8f8f8;
+      overflow: hidden; /* Evita el desplazamiento vertical de la ventana */
+    }
+
+    #container {
+      text-align: center;
+    }
+
+    #title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff66b2; /* rosado */
+    }
+
+    #btnYes, #btnNo {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+    }
+ #btnYes {
+      left: 600px; /* Ajusta el valor según sea necesario */
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="title">ME PERDONAS ISAURA ?</div>
+    <button id="btnYes" onclick="perdonar()">Sí</button>
+    <button id="btnNo" onmouseover="moverNo()">No</button>
+  </div>
+
+  <script>
+    function perdonar() {
+      alert("Yo también te perdono, te amo.");
+    }
+
+    function moverNo() {
+      const btnNo = document.getElementById('btnNo');
+      const maxX = window.innerWidth - btnNo.offsetWidth;
+      const maxY = window.innerHeight - btnNo.offsetHeight;
+
+      const newX = Math.floor(Math.random() * maxX);
+      const newY = Math.floor(Math.random() * maxY);
+
+      btnNo.style.left = `${newX}px`;
+      btnNo.style.top = `${newY}px`;
+    }
+  </script>
+</body>
+</html>
+
+
+
